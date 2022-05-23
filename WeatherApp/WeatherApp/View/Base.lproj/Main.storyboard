@@ -34,11 +34,14 @@
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" backgroundImage="location.circle.fill" catalog="system"/>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="trt-X9-eGE">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your city" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="trt-X9-eGE">
                                                 <rect key="frame" x="50" y="0.0" width="274" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search"/>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="YLR-AT-nqR" eventType="touchUpInside" id="kyv-su-tOQ"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEK-Ml-mL7">
                                                 <rect key="frame" x="334" y="1" width="40" height="38"/>
@@ -48,6 +51,9 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <state key="normal" backgroundImage="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="searchPressed:" destination="YLR-AT-nqR" eventType="touchUpInside" id="dDh-OA-00t"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -110,6 +116,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="nMm-qn-OQa" id="PEc-9H-FEo"/>
                         <outlet property="conditionImageView" destination="mzM-XP-9Wc" id="QjL-6V-jFK"/>
+                        <outlet property="searchTextField" destination="trt-X9-eGE" id="nHQ-0m-Bjh"/>
                         <outlet property="temperatureLabel" destination="P21-1o-Uwb" id="Geb-xb-5Ka"/>
                     </connections>
                 </viewController>

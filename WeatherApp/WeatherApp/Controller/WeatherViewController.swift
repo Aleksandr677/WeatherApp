@@ -18,6 +18,7 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherManager.delegate = self
         searchTextField.delegate = self
     }
     
@@ -49,5 +50,14 @@ extension WeatherViewController: UITextFieldDelegate {
             weatherManager.fetchWeather(cityName: city)
         }
         searchTextField.text = "" //for clearing textField after typing
+    }
+}
+
+
+//MARK: - WeatherManagerDelegate
+
+extension WeatherViewController: WeatherManagerDelegate {
+    func didUpdateWeather(weather: WeatherModel) {
+        print(weather.temperature)
     }
 }
